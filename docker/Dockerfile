@@ -80,9 +80,9 @@ RUN sudo rm /tmp/bashrc.bash
 
 # INFO: Uncomment lines below to enable automatic save of python-only and html-only
 #       exports alongside the notebook
-#COPY docker/jupyter_notebook_config.py /tmp/
-#RUN cat /tmp/jupyter_notebook_config.py >> ${home}/.jupyter/jupyter_notebook_config.py
-#RUN sudo rm /tmp/jupyter_notebook_config.py
+COPY docker/jupyter_notebook_config.py /tmp/
+RUN cat /tmp/jupyter_notebook_config.py >> ${home}/.jupyter/jupyter_notebook_config.py
+RUN sudo rm /tmp/jupyter_notebook_config.py
 
 # INFO: Uncomment the RUN command below to disable git diff paging
 #RUN git config --global core.pager ''
